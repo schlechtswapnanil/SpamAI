@@ -1,1 +1,1 @@
-"# SpamAI" 
+A Python-based spam detector that uses comparative classification techniques among Random Forest Classifiers and Support Vector Machines. In addition, the highly creative and stunning UI enables smooth user-end interaction.
