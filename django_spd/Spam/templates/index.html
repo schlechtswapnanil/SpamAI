@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Spam/Css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Spam Detection</title>
+</head>
+<body>
+
+    <section>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Web App</a></li>
+                    <li><a href="#" class="active">Web API</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="fluid container content">
+            <div class="row m-auto"></div>
+            <div class="col-md-6 p-5 m-auto typ-content">
+                <h1 style="font-family: SFPRODISPLAY;" class="top-of-all">Spam Detector</h1>
+                
+                
+                <p style="font-family: SFPRODISPLAY;">Simply enter your email into the text area, select your desired Algorithm, press "Check" and wait.</p>
+                <p style="font-family: SFPRODISPLAY;">The results will be succesfully displayed after processing.</p>
+            </div>
+
+            <div class="col-md-6 p-5 m-auto form-content">
+                <form method="POST" action="check" class="main-form">
+                    {% csrf_token %}
+                    <textarea required name="rawdata" id="rawdata"  style="padding: 10px; "></textarea>
+                    <div class="algos">
+                        <div class="algo-choice">
+                            <label style="font-family: SFPRODISPLAY;" class="radiocontainer">
+                                Random Forest Classifier
+                                <input type="radio" name="algo"  value="algo 1" >                            
+                                <span class="checkmark">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="algo-choice">
+                            <label class="radiocontainer" style="font-family: SFPRODISPLAY;" >
+                                Support Vector Classifier
+                                <input type="radio" name="algo" value="algo 2">                            
+                                <span class="checkmark">
+                                </span>
+                            </label>
+                        </div>
+                        
+                    </div>
+                    <div class="check-holder">
+                        <button class="check-btn" type="'submit" style="color: black;">Check</button>
+                    </div>
+                </form>
+                
+            </div>
+            
+        </div>
+        <break>
+        
+
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="Js/main.js"></script>
+</body>
+</html>
